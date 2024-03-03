@@ -15,11 +15,7 @@ This project consists of two implementations, one in Python (`app.py`) and the o
 
 ### Usage 🚀
 1. Replace the configuration variables (`botToken`, `chatId`, `message`, etc.) with your own values.
-2. Install the required dependencies:
-   ```bash
-   pip install urllib3
-   ```
-3. Run the `app.py` file:
+2. Run the `app.py` file:
    ```bash
    python app.py
    ```
@@ -30,12 +26,8 @@ This project consists of two implementations, one in Python (`app.py`) and the o
   git clone https://github.com/your-username/telegram-bot-message-sender.git
   cd telegram-bot-message-sender
   ```
-- **Step 2:** Install dependencies:
-  ```bash
-  pip install urllib3
-  ```
-- **Step 3:** Replace the configuration variables in `app.py` with your own values.
-- **Step 4:** Run the Python script:
+- **Step 2:** Replace the configuration variables in `app.py` with your own values.
+- **Step 3:** Run the Python script:
   ```bash
   python app.py
   ```
