@@ -22,13 +22,12 @@ def send_message(text):
         "text": text
     }
     try:
-        parsed_url = urllib.parse.urlparse(url)
-        if parsed_url.scheme not in ('http', 'https'):
-            raise ValueError("URL scheme not allowed")
-        
+        # menggunakan opener khusus dengan dukungan HTTPS
+        opener = urllib.request.build_opener(urllib.request.HTTPSHandler())
+        # membuat request
         req = urllib.request.Request(url, json.dumps(data).encode("utf-8"), headers={'Content-Type': 'application/json'})
-        
-        with urllib.request.urlopen(req) as response:
+        # membuka url dengan opener khusus/custom
+        with opener.open(req) as response:
             response_data = json.loads(response.read().decode("utf-8"))
             if response_data["ok"]:
                 print(f"Pesan '{text}' berhasil dikirim")
@@ -40,6 +39,7 @@ def send_message(text):
         handle_url_error(e)
     except ValueError as e:
         print("Error:", e)
+
 
 # Fungsi utama untuk mengirim pesan secara terus menerus dengan interval
 def send_messages_continuously():
@@ -62,7 +62,7 @@ def handle_http_error(error):
             retry_after = response_data["parameters"]["retry_after"]
             print(f"Too Many Requests: Retry after {retry_after} seconds")
             time.sleep(int(retry_after))
-            send_messages_continuously()
+            send_messages_continuously()  # Panggil kembali fungsi untuk melanjutkan pengiriman pesan
         except Exception as e:
             print("Failed to handle Too Many Requests error:", e)
             time.sleep(config["requestRetryInterval"])
