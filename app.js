@@ -20,7 +20,7 @@ async function sendMessage(text) {
          chat_id: config.chatId,
          text: text,
       });
-      console.log(`Pesan "${text}" berhasil dikirim: Berhasil melakukan SPAM`);
+      console.log(`Pesan "${text}" berhasil dikirim, Berhasil melakukan SPAM`);
    } catch (error) {
       handleError(error);
    }
