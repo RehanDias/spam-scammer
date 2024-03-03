@@ -6,12 +6,12 @@ This project consists of two implementations, one in Python (`app.py`) and the o
 ## Python Implementation (`app.py`) 🐍
 
 ### Configuration Variables 🛠️
-- `botToken`: 🤖 Token for the Telegram bot.
-- `chatId`: 💬 ID of the chat where messages will be sent.
+- `bot_token`: 🤖 Token for the Telegram bot.
+- `chat_id`: 💬 ID of the chat where messages will be sent.
 - `message`: 📝 The message to be sent.
 - `interval`: ⏱️ Time interval in seconds between each message sent.
-- `requestRetryInterval`: ⏳ Time interval in seconds before retrying after encountering a 429 HTTP error (rate limit exceeded).
-- `numberOfRequests`: 📈 Total number of requests to be sent.
+- `retry_interval`: ⏳ Time interval in seconds before retrying after encountering a 429 HTTP error (rate limit exceeded).
+- `num_request`: 📈 Total number of requests to be sent.
 
 ### Usage 🚀
 1. Replace the configuration variables (`botToken`, `chatId`, `message`, etc.) with your own values.
@@ -23,8 +23,8 @@ This project consists of two implementations, one in Python (`app.py`) and the o
 ### Installation Steps (Python) 🛠️
 - **Step 1:** Clone the repository:
   ```bash
-  git clone https://github.com/your-username/telegram-bot-message-sender.git
-  cd telegram-bot-message-sender
+  git clone https://github.com/RehanDias/spam-scammer.git
+  cd spam-scammer
   ```
 - **Step 2:** Replace the configuration variables in `app.py` with your own values.
 - **Step 3:** Run the Python script:
@@ -56,8 +56,8 @@ This project consists of two implementations, one in Python (`app.py`) and the o
 ### Installation Steps (NodeJs) 🟢
 - **Step 1:** Clone the repository:
   ```bash
-  git clone https://github.com/your-username/telegram-bot-message-sender.git
-  cd telegram-bot-message-sender
+  git clone https://github.com/RehanDias/spam-scammer.git
+  cd spam-scammer
   ```
 - **Step 2:** Install dependencies:
   ```bash
