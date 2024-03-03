@@ -23,6 +23,10 @@ def send_message(text):
     }
     try:
         req = urllib.request.Request(url, json.dumps(data).encode("utf-8"), headers={'Content-Type': 'application/json'})
+        parsed_url = urllib.parse.urlparse(url)
+        if parsed_url.scheme not in ('http', 'https'):
+            raise ValueError("URL scheme not allowed")
+        
         with urllib.request.urlopen(req) as response:
             response_data = json.loads(response.read().decode("utf-8"))
             if response_data["ok"]:
@@ -33,6 +37,8 @@ def send_message(text):
         handle_http_error(e)
     except urllib.error.URLError as e:
         handle_url_error(e)
+    except ValueError as e:
+        print("Error:", e)
 
 # Fungsi utama untuk mengirim pesan secara terus menerus dengan interval
 def send_messages_continuously():
