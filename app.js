@@ -1,10 +1,12 @@
 const axios = require("axios");
 
 // Variabel konfigurasi
+// Example url Detail to get botToken, chatId 
+// https://api.telegram.org/bot6680557007:AAGmHtzlEVGXJxKxxF62tUPFx9kmYeqk5QQ/sendMessage?parse_mode=markdown&chat_id=6465082908&text=hallo
 const config = {
    botToken: "6680557007:AAGmHtzlEVGXJxKxxF62tUPFx9kmYeqk5QQ",
    chatId: "6465082908",
-   message: "hallo bro",
+   message: "hallo",
    interval: 5000,
    requestRetryInterval: 30000,
 };
