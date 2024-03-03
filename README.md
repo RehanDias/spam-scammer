@@ -75,7 +75,7 @@ This will guide users to install the necessary dependencies before running the s
 
 ## Dependencies 📦
 - Python Implementation:
-  - `urllib`
+  - `urllib3`
   - `json`
   - `time`
 - NodeJs Implementation:
