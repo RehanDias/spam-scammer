@@ -1,0 +1,24 @@
+{
+   "name": "spam-scammer",
+   "version": "1.0.0",
+   "description": "to spam scammers who use telegram bots by sending lots of responses",
+   "main": "app.js",
+   "scripts": {
+      "start": "node app.js",
+      "test": "npm start"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/RehanDias/spam-scammer.git"
+   },
+   "keywords": [
+      "spam-scammer",
+      "penipuan-aplikasi-undangan"
+   ],
+   "author": "RehanDias",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/RehanDias/spam-scammer/issues"
+   },
+   "homepage": "https://github.com/RehanDias/spam-scammer#readme"
+}
