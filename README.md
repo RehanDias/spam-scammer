@@ -1,5 +1,5 @@
 
-# SPAM scammer using making request 📩
+# Fraudulent spam with lots of requests 📩
 
 This project consists of two implementations, one in Python (`app.py`) and the other in NodeJs (`app.js`), for sending messages to a Telegram chat using the Telegram Bot API, to spamming API scammer.
 
