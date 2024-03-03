@@ -26,12 +26,16 @@ This project consists of two implementations, one in Python (`app.py`) and the o
   git clone https://github.com/RehanDias/spam-scammer.git
   cd spam-scammer
   ```
-- **Step 2:** Replace the configuration variables in `app.py` with your own values.
-- **Step 3:** Run the Python script:
+- **Step 2:** Install the required dependencies using `pip`:
+  ```bash
+  pip install -r requirements.txt
+  ```
+- **Step 3:** Replace the configuration variables in `app.py` with your own values.
+- **Step 4:** Run the Python script:
   ```bash
   python app.py
   ```
-
+This will guide users to install the necessary dependencies before running the script.
 ## NodeJs Implementation (`app.js`) 🟢
 
 ### Configuration Variables 🛠️
