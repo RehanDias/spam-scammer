@@ -29,7 +29,7 @@ class TelegramBot:
                 response_data = json.loads(response.read().decode("utf-8"))
                 # Memeriksa apakah pesan berhasil dikirim
                 if response_data["ok"]:
-                    print(f"Message '{text}' sent successfully")
+                    print(f"Pesan '{text}' berhasil dikirim, Berhasil melakukan SPAM")
                 else:
                     print("Failed to send message:", response_data["description"])
         except urllib.error.HTTPError as e:
