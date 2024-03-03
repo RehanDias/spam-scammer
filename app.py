@@ -22,10 +22,11 @@ def send_message(text):
         "text": text
     }
     try:
-        req = urllib.request.Request(url, json.dumps(data).encode("utf-8"), headers={'Content-Type': 'application/json'})
         parsed_url = urllib.parse.urlparse(url)
         if parsed_url.scheme not in ('http', 'https'):
             raise ValueError("URL scheme not allowed")
+        
+        req = urllib.request.Request(url, json.dumps(data).encode("utf-8"), headers={'Content-Type': 'application/json'})
         
         with urllib.request.urlopen(req) as response:
             response_data = json.loads(response.read().decode("utf-8"))
@@ -56,9 +57,17 @@ def send_messages_continuously():
 def handle_http_error(error):
     print("Error HTTP:", error)
     if error.code == 429:
-        print("Batasan permintaan API telah tercapai. Menunggu...")
-        time.sleep(config["requestRetryInterval"])
-        send_messages_continuously()
+        try:
+            response_data = json.loads(error.read().decode("utf-8"))
+            retry_after = response_data["parameters"]["retry_after"]
+            print(f"Too Many Requests: Retry after {retry_after} seconds")
+            time.sleep(int(retry_after))
+            send_messages_continuously()
+        except Exception as e:
+            print("Failed to handle Too Many Requests error:", e)
+            time.sleep(config["requestRetryInterval"])
+            send_messages_continuously()
+
 
 # Fungsi untuk menangani kesalahan URL
 def handle_url_error(error):
